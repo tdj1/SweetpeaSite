@@ -10,7 +10,6 @@ export default function AnniversarySurprise() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
-  const [fallingHeartsEnabled, setFallingHeartsEnabled] = useState(true);
 
   const handleLogin = () => {
     if (name.toLowerCase() === "annie" && password === "0803") {
@@ -55,11 +54,9 @@ export default function AnniversarySurprise() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // 💖 Falling clickable hearts (toggleable)
+  // 💖 Falling clickable hearts (always active)
   useEffect(() => {
-    if (!fallingHeartsEnabled) return;
-
-    const mwahSound = new Audio("/chomp.mp3");
+    const mwahSound = new Audio("SweetpeaSite/chomp.mp3");
 
     const spawnFallingHeart = () => {
       const heart = document.createElement("div");
@@ -85,7 +82,7 @@ export default function AnniversarySurprise() {
 
     const interval = setInterval(spawnFallingHeart, 800);
     return () => clearInterval(interval);
-  }, [fallingHeartsEnabled]);
+  }, []);
 
   return (
     <div className="app-container">
@@ -110,16 +107,6 @@ export default function AnniversarySurprise() {
         </div>
       ) : (
         <div className="flex flex-col items-center">
-          {/* Toggle switch for falling hearts */}
-          <div className="flex items-center gap-2 mb-4">
-            <label className="text-pink-600 font-semibold">Falling Hearts:</label>
-            <input
-              type="checkbox"
-              checked={fallingHeartsEnabled}
-              onChange={() => setFallingHeartsEnabled(!fallingHeartsEnabled)}
-            />
-          </div>
-
           {!opened ? (
             <motion.div
               className="relative cursor-pointer"
