@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  background-image: url('./assets/strawberry.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 24rem;
+  width: 100%;
+  text-align: center;
+}
+
+.card input {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #f9a8d4; /* Tailwind pink-300 */
+  border-radius: 0.75rem;
+  text-align: center;
+  width: 100%;
+}
+
+.card button {
+  background-color: #ec4899; /* Tailwind pink-500 */
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #f472b6; /* Tailwind pink-400 */
+}
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.tulip-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: url('./assets/tulips.jpg') repeat-x;
+  background-size: contain;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+.postcard {
+  border-radius: 0.75rem;
+  background-color: transparent; /* or remove it entirely */
+  box-shadow: none;
+  max-width: 20rem;
+  width: 100%;
+  object-fit: contain;
+}
+
+.heart {
+  position: fixed;
+  font-size: 1.2rem;
+  pointer-events: none;
+  z-index: 9999;
+  animation: float 1s ease-out forwards;
+}
+
+@keyframes float {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.5);
+  }
+}
+
+.falling-heart {
+  position: fixed;
+  top: -40px;
+  font-size: 1.5rem;
+  pointer-events: auto;
+  user-select: none;
+  animation: fall 5s linear forwards;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+.falling-heart.pop {
+  transform: scale(2) rotate(20deg);
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
