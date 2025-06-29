@@ -56,7 +56,7 @@ export default function AnniversarySurprise() {
 
   // 💖 Falling clickable hearts (always active)
   useEffect(() => {
-    const mwahSound = new Audio("SweetpeaSite/chomp.mp3");
+    const mwahSound = new Audio("chomp.mp3");
 
     const spawnFallingHeart = () => {
       const heart = document.createElement("div");
