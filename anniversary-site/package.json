@@ -1,5 +1,6 @@
 {
   "name": "anniversary-site",
+  "homepage": "https://tdj1.github.io/SweetpeaSite/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.3",
@@ -31,6 +32,5 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
     "vite": "^7.0.0"
-  },
-  "homepage": "https://github.com/tdj1/SweetpeaSite"
+  }
 }
